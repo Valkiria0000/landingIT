@@ -34,6 +34,7 @@ $grey: #7690a8;
 $white: #ffffff;
 $green: #52c29d;
 $red: #f04d5d;
+$greydark: #5a7184;
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -43,7 +44,6 @@ $red: #f04d5d;
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -402,11 +402,18 @@ template {
 .title1 {
   font-size: 56px;
   line-height: 68px;
+  margin-bottom: 30px;
 }
 
 .title2 {
   font-size: 40px;
   line-height: 52px;
+  margin: 20px 0 10px 0;
+}
+.title3 {
+  font-size: 24px;
+  line-height: 21px;
+  font-weight: normal;
 }
 .paragraph {
   line-height: 28px;
@@ -441,13 +448,33 @@ template {
   width: 179px;
   color: $lightblue;
   border: 2px solid $lightblue;
-
+  margin-top: 30px;
   &:hover {
     background-color: $lightblue;
     color: $white;
   }
 }
+.content-plans-button {
+  width: 171px;
+  height: 44px;
+  text-decoration: none;
+  line-height: 44px;
+  border-radius: 20px;
+  color: $darkblue;
+  border: 2px solid $darkblue;
+  padding: 10px 40px;
+  &:hover {
+    background-color: $darkblue;
+    color: $white;
+  }
+}
 
+.subtitle {
+  line-height: 21px;
+  color: $grey;
+  text-transform: uppercase;
+  margin: 0;
+}
 /*header*/
 .header {
   display: flex;
@@ -478,8 +505,146 @@ template {
     }
   }
 }
-
+/*main*/
 .content-main {
   display: flex;
-  flex-direction: row;
+
+  &-left {
+    padding-right: 100px;
+  }
+  &-left,
+  &-right {
+    flex-basis: 50%;
+    box-sizing: border-box;
+  }
+}
+
+.section {
+  padding-top: 120px;
+  &-paragraph {
+    font-size: 18px;
+    margin: 0;
+
+    &.is-light {
+      color: $grey;
+    }
+  }
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  margin: 61px 0 100px 0;
+
+  &-content {
+    border: 1px solid #e5eaf4;
+    padding: 41px;
+    flex-basis: calc(33% - 20px);
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    &-icon {
+      border: 1px solid rgba(21, 101, 216, 0.1);
+      padding: 14px;
+      box-sizing: border-box;
+      border-radius: 16px;
+      width: 64px;
+      height: 64px;
+    }
+    &-paragraph {
+      margin-bottom: 30px;
+    }
+    letter-spacing: 0.2px;
+    &-link {
+      text-decoration: none;
+      color: $darkblue;
+
+      &:hover {
+        color: $lightblue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.image-blocks {
+  display: flex;
+  justify-content: space-between;
+  margin: 85px 0 200px 0;
+
+  &-left,
+  &-right {
+    flex-basis: calc(50% - 25px);
+    height: 482px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-size: 100% 100%;
+    background-color: $darkblue;
+    background-position: center center;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &-left {
+    background-image: url(../img/left.png);
+  }
+  &-right {
+    background-image: url(../img/right.png);
+  }
+  span {
+    color: $white;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.2px;
+    margin: 0 0 64px 48px;
+  }
+}
+.content-plans {
+  margin-top: 84px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  &-block {
+    padding: 41px;
+    flex-basis: calc(33% - 20px);
+    box-sizing: border-box;
+
+    &.is-blue {
+      border-top: 3px solid $lightblue;
+    }
+    &.is-green {
+      border-top: 3px solid $green;
+    }
+    &.is-red {
+      border-top: 3px solid $red;
+    }
+  }
+  &-price {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 52px;
+
+    letter-spacing: 0.2px;
+
+    &.is-blue {
+      color: $lightblue;
+    }
+    &.is-green {
+      color: $green;
+    }
+    &.is-red {
+      color: $red;
+    }
+  }
+  &-paragraph {
+    line-height: 28px;
+    color: $greydark;
+  }
+
+  .month {
+    line-height: 24px;
+  }
 }
