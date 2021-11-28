@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/style.css" type="text/css" rel="stylesheet" />
-    <!--<link href="css/normalize.css" type="text/css" rel="stylesheet" />-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
     <title>Freehand</title>
   </head>
   <body>
@@ -42,7 +46,34 @@
               <button class="button content-left-button">Learn more</button>
             </div>
           </div>
-          <div class="content-main-right">hjk</div>
+          <div class="content-main-right">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="img-slide">
+                    <img class="right-img" src="img/slider1.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-slide">
+                    <img class="right-img" src="img/slider2.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-slide">
+                    <img class="right-img" src="img/slider3.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section container">
@@ -255,5 +286,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
