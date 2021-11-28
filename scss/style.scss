@@ -35,6 +35,7 @@ $white: #ffffff;
 $green: #52c29d;
 $red: #f04d5d;
 $greydark: #5a7184;
+$lightgrey: #efeef3;
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -408,7 +409,7 @@ template {
 .title2 {
   font-size: 40px;
   line-height: 52px;
-  margin: 20px 0 10px 0;
+  margin: 0;
 }
 .title3 {
   font-size: 24px;
@@ -416,6 +417,7 @@ template {
   font-weight: normal;
 }
 .paragraph {
+  font-size: 16px;
   line-height: 28px;
 }
 .container {
@@ -481,7 +483,7 @@ template {
   justify-content: space-between;
   padding: 40px 0;
   align-items: center;
-  border-bottom: 1px solid #efeef3;
+  border-bottom: 1px solid $lightgrey;
 
   &-logo {
     width: 188px;
@@ -520,10 +522,10 @@ template {
 }
 
 .section {
-  padding-top: 120px;
+  padding-top: 100px;
+  margin-bottom: 100px;
   &-paragraph {
     font-size: 18px;
-    margin: 0;
 
     &.is-light {
       color: $grey;
@@ -534,7 +536,7 @@ template {
 .services {
   display: flex;
   justify-content: space-between;
-  margin: 61px 0 100px 0;
+  margin-top: 61px;
 
   &-content {
     border: 1px solid #e5eaf4;
@@ -570,7 +572,7 @@ template {
 .image-blocks {
   display: flex;
   justify-content: space-between;
-  margin: 85px 0 200px 0;
+  margin: 85px 0 0 0;
 
   &-left,
   &-right {
@@ -584,6 +586,11 @@ template {
     text-decoration: none;
     display: flex;
     align-items: flex-end;
+    transition: background-size 400ms ease;
+
+    &:hover {
+      background-size: 110% 110%;
+    }
   }
 
   &-left {
@@ -593,6 +600,7 @@ template {
     background-image: url(../img/right.png);
   }
   span {
+    font-family: "Roboto";
     color: $white;
     font-weight: normal;
     font-size: 36px;
@@ -609,8 +617,10 @@ template {
 
   &-block {
     padding: 41px;
+    background-color: $white;
     flex-basis: calc(33% - 20px);
     box-sizing: border-box;
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.05);
 
     &.is-blue {
       border-top: 3px solid $lightblue;
@@ -626,7 +636,6 @@ template {
     font-weight: bold;
     font-size: 40px;
     line-height: 52px;
-
     letter-spacing: 0.2px;
 
     &.is-blue {
@@ -643,8 +652,139 @@ template {
     line-height: 28px;
     color: $greydark;
   }
-
+  .item {
+    margin-bottom: 56px;
+  }
   .month {
     line-height: 24px;
+  }
+}
+
+.section-demo {
+  background: $darkblue;
+  background-image: url(../img/backgroundDemo.png);
+  background-size: cover;
+  box-sizing: border-box;
+  height: 380px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &-title {
+    font-family: "Roboto";
+    color: $white;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  &-paragraph {
+    font-size: 18px;
+    line-height: 32px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  &-buttons {
+    margin-top: 48px;
+  }
+  &-button {
+    width: 185px;
+    height: 48px;
+    text-decoration: none;
+    line-height: 19px;
+    text-align: center;
+    color: $white;
+    border-radius: 50px;
+    border: 2px solid $white;
+    padding: 15px 39px;
+    box-sizing: border-box;
+    margin-right: 20px;
+
+    &:hover {
+      background-color: $white;
+      color: $lighttext;
+    }
+  }
+}
+
+.footer {
+  background-color: $darkblue;
+  color: $lightgrey;
+  padding: 89px 0 70px 0;
+}
+.footer-copyright {
+  text-align: center;
+  padding-top: 130px;
+  p {
+    margin: 0;
+  }
+}
+.content-footer {
+  display: flex;
+  justify-content: space-between;
+  &-social-link {
+    background-color: $lightgrey;
+    width: 38px;
+    height: 38px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  &-left {
+    width: 285px;
+    padding-right: 194px;
+
+    p {
+      padding: 38px 0 58px 0;
+      margin: 0;
+    }
+  }
+  &-right {
+    display: flex;
+    flex-grow: 1;
+  }
+  &-block {
+    flex-basis: 200px;
+    padding-right: 20px;
+  }
+  &-paragraph {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  &-title3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $lightgrey;
+  }
+  &-menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 38px;
+
+    li {
+      margin-bottom: 20px;
+
+      .mail {
+        color: $lightgrey;
+        text-decoration: none;
+        font-size: 25px;
+        line-height: 29px;
+      }
+    }
+    &-link {
+      color: $lightgrey;
+      text-decoration: none;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
